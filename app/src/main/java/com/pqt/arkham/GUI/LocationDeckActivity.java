@@ -46,6 +46,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -153,7 +154,7 @@ public class LocationDeckActivity extends Activity {
 	    }
 	    
 	    @Override
-	    public Object instantiateItem( View pager, int position )
+	    public Object instantiateItem( ViewGroup container, int position )
 	    {
 	    	final NeighborhoodCard theCard = cardArr.get(position);
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
@@ -232,7 +233,7 @@ public class LocationDeckActivity extends Activity {
 	    	}
 	    	
 	    	
-	    	((ViewPager) pager).addView(layout);
+	    	((ViewPager) container).addView(layout);
 	    	
 	        Bitmap front;
 	        try {
@@ -252,9 +253,9 @@ public class LocationDeckActivity extends Activity {
 	    }
 	    
 	    @Override
-	    public void destroyItem( View pager, int position, Object view )
+	    public void destroyItem( ViewGroup container, int position, Object object )
 	    {
-	        ((ViewPager)pager).removeView( (View)view );
+	        ((ViewPager)container).removeView( (View)object );
 	    }
 	 
 	    @Override
@@ -323,15 +324,13 @@ public class LocationDeckActivity extends Activity {
 	    
 		protected int getIndependentWidth(int origWidth)
 		{
-			DisplayMetrics dm = new DisplayMetrics();
-			getDisplay().getRealMetrics(dm); 
+			DisplayMetrics dm = getResources().getDisplayMetrics();
 			return (int) Math.ceil((origWidth*dm.widthPixels)/480.0f);
 		}
 		
 		protected int getIndependentHeight(int origHeight)
 		{
-			DisplayMetrics dm = new DisplayMetrics();
-			getDisplay().getRealMetrics(dm); 	
+			DisplayMetrics dm = getResources().getDisplayMetrics();
 			return (int) Math.ceil((origHeight*dm.heightPixels)/800.0f);
 		}
 	}

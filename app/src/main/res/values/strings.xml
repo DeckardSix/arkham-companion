@@ -16,19 +16,132 @@
  along with Arkham Companion.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources>
-    <string name="hello">Location Picker</string>
     <string name="app_name">Arkham Companion</string>
-    <string name="encounter_arrow_clicked">Deck shuffled&#8230;</string>
-    <string name="location_deck_back">No Encounter selected.\n Deck not shuffled.\n Replacing cards&#8230;</string>
-    <string name="otherword_arrow_clicked_true">Deck shuffled&#8230;</string>
-    <string name="otherword_arrow_clicked_false">Discarding cards&#8230;</string>
-    <string name="new_game">New Game</string>
-    <string name="delete_card">Remove</string>
-    <string name="ffg_trademark">Arkham Horror and its expansion titles are trademarks and/or registered trademarks of Fantasy Flight Publishing, Inc.</string>
-    <string name="ffg_copyright">Arkham Horror, its expansions and the card text from Arkham Horror and its expansions are copyright Fantasy Flight Publishing, Inc.</string>
-    <string name="my_copyright">This application is Copyright 2012 Seth Gupton</string>
-    <string name="GPL"><![CDATA[This file is part of Arkham Companion.<br/>Arkham Companion is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br/>Arkham Companion is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br/>You should have received a copy of the GNU General Public License along with Arkham Companion. If not, see http://www.gnu.org/licenses.]]></string>
-    <string name="about_app">About</string>
-    <string name="empty_hx">No Encounters have been selected&#8230;</string>
-    <string name="shuffle">Shuffle</string>
+    
+    <!-- Modern UI Strings -->
+    <string name="select_expansions">Select Expansions</string>
+    <string name="expansion_description">Choose which expansions you want to include in your game. Only selected expansions will be available.</string>
+    <string name="select_all">Select All</string>
+    <string name="btn_continue">Continue</string>
+    <string name="retry">Retry</string>
+    <string name="error_loading_expansions">Failed to load expansions</string>
+    <string name="expansion_icon">Expansion icon</string>
+    <string name="toggle_expansion">Toggle expansion selection</string>
+    <string name="expansion_name_placeholder">Expansion Name</string>
+    <string name="expansion_description_placeholder">Expansion description</string>
+    
+    <!-- Accessibility -->
+    <string name="content_description_expansion_item">Expansion item</string>
+    <string name="content_description_expansion_checkbox">Toggle expansion selection</string>
+    <string name="content_description_continue_button">Continue to next screen</string>
+    <string name="content_description_retry_button">Retry loading expansions</string>
+    
+    <!-- Menu Items -->
+    <string name="menu_about">About</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_help">Help</string>
+    
+    <!-- Error Messages -->
+    <string name="error_generic">Something went wrong</string>
+    <string name="error_network">Network error</string>
+    <string name="error_database">Database error</string>
+    
+    <!-- Success Messages -->
+    <string name="success_expansion_updated">Expansion updated</string>
+    <string name="success_expansions_loaded">Expansions loaded successfully</string>
+    
+    <!-- Loading Messages -->
+    <string name="loading_expansions">Loading expansions…</string>
+    <string name="loading_locations">Loading locations…</string>
+    <string name="loading_encounters">Loading encounters…</string>
+    
+    <!-- Navigation -->
+    <string name="nav_expansions">Expansions</string>
+    <string name="nav_locations">Locations</string>
+    <string name="nav_encounters">Encounters</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_dark_mode">Dark Mode</string>
+    <string name="settings_notifications">Notifications</string>
+    <string name="settings_auto_save">Auto Save</string>
+    <string name="settings_about">About</string>
+    
+    <!-- About -->
+    <string name="about_title">About Arkham Companion</string>
+    <string name="about_version">Version %s</string>
+    <string name="about_description">A companion app for Arkham Horror board game</string>
+    <string name="about_license">GNU General Public License v3.0</string>
+    <string name="about_website">Website</string>
+    <string name="about_github">GitHub</string>
+    
+    <!-- Game Terms -->
+    <string name="game_arkham_horror">Arkham Horror</string>
+    <string name="game_location">Location</string>
+    <string name="game_encounter">Encounter</string>
+    <string name="game_expansion">Expansion</string>
+    <string name="game_neighborhood">Neighborhood</string>
+    <string name="game_other_world">Other World</string>
+    
+    <!-- Actions -->
+    <string name="action_play">Play</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_reset">Reset</string>
+    <string name="action_share">Share</string>
+    <string name="action_export">Export</string>
+    <string name="action_import">Import</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_edit">Edit</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_ok">OK</string>
+    <string name="action_yes">Yes</string>
+    <string name="action_no">No</string>
+    
+    <!-- Confirmation Dialogs -->
+    <string name="dialog_confirm_delete_title">Confirm Delete</string>
+    <string name="dialog_confirm_delete_message">Are you sure you want to delete this item?</string>
+    <string name="dialog_confirm_reset_title">Confirm Reset</string>
+    <string name="dialog_confirm_reset_message">Are you sure you want to reset the game state?</string>
+    
+    <!-- Feedback -->
+    <string name="feedback_thanks">Thank you for your feedback!</string>
+    <string name="feedback_error">Failed to send feedback</string>
+    <string name="feedback_success">Feedback sent successfully</string>
+    
+    <!-- Statistics -->
+    <string name="stats_title">Statistics</string>
+    <string name="stats_encounters_played">Encounters Played</string>
+    <string name="stats_locations_visited">Locations Visited</string>
+    <string name="stats_expansions_used">Expansions Used</string>
+    <string name="stats_play_time">Play Time</string>
+    <string name="stats_games_completed">Games Completed</string>
+    
+    <!-- Tutorial -->
+    <string name="tutorial_welcome">Welcome to Arkham Companion!</string>
+    <string name="tutorial_step_1">First, select which expansions you want to use</string>
+    <string name="tutorial_step_2">Then choose a neighborhood to explore</string>
+    <string name="tutorial_step_3">Finally, draw and play encounters</string>
+    <string name="tutorial_skip">Skip Tutorial</string>
+    <string name="tutorial_next">Next</string>
+         <string name="tutorial_finish">Finish</string>
+     <string name="ffg_copyright">Arkham Horror, its expansions and the card text from Arkham Horror and its expansions are copyright Fantasy Flight Publishing, Inc.</string>
+     <string name="ffg_trademark">Arkham Horror and its expansion titles are trademarks and/or registered trademarks of Fantasy Flight Publishing, Inc.</string>
+     <string name="my_copyright">This application is Copyright 2012 Seth Gupton</string>
+     <string name="GPL"><![CDATA[This file is part of Arkham Companion.<br/>Arkham Companion is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br/>Arkham Companion is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br/>You should have received a copy of the GNU General Public License along with Arkham Companion. If not, see http://www.gnu.org/licenses.]]></string>
+     <string name="empty_hx">No Encounters have been selected&#8230;</string>
+     <string name="hx_time_image">Cthulhu-themed history background</string>
+     <string name="hx_atmospheric_text">In the depths of time, ancient horrors await...</string>
+    <string name="arkham_horror_logo">Arkham Horror Logo</string>
+     <string name="shuffle">Shuffle</string>
+     <string name="delete_card">Remove</string>
+     <string name="new_game">New Game</string>
+     <string name="about_app">About</string>
+     <string name="encounter_arrow_clicked">Deck shuffled&#8230;</string>
+     <string name="location_deck_back">No Encounter selected.\n Deck not shuffled.\n Replacing cards&#8230;</string>
+     <string name="otherword_arrow_clicked_true">Deck shuffled&#8230;</string>
+     <string name="otherword_arrow_clicked_false">Discarding cards&#8230;</string>
 </resources>

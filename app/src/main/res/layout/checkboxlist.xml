@@ -20,6 +20,8 @@
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
 	        android:textSize="27sp"
+	        android:textColor="@color/white"
+	        android:textStyle="bold"
 	        android:paddingLeft="60dp"
 	        android:paddingRight="16dp"
 	        android:paddingTop="8dp"

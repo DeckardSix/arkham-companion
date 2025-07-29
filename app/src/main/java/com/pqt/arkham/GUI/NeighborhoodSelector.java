@@ -80,7 +80,7 @@ public class NeighborhoodSelector extends Activity {
         final Activity act = this;
         final Bundle bundle = new Bundle();
         // create the adapter using the cursor pointing to the desired data as well as the layout information
-        SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.neighborhood_button, cursor, columns, to);
+        SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.neighborhood_button, cursor, columns, to, 0);
         //SimpleCursorAdapter cursorAdapter = new SimpleCursorAdapter(/* ur stuff */);
         mAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
             public boolean setViewValue(View view, final Cursor cursor, int columnIndex) {

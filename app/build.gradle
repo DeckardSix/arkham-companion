@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -15,12 +17,23 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        
+        // Enable multidex for large apps
+        multiDexEnabled true
+        
+        // Vector drawables support
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
         }
     }
 
@@ -36,9 +49,64 @@ android {
     tasks.withType(JavaCompile) {
         options.compilerArgs << "-Xlint:deprecation"
     }
+    
+    // Enable view binding
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
 }
 
 dependencies {
+    // Core Android
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    
+    // Material Design 3
+    implementation libs.material3
+    
+    // UI Components
+    implementation libs.androidx.constraintlayout
+    
+    // Navigation
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    
+    // Lifecycle & Architecture Components
+    implementation libs.lifecycle.viewmodel
+    implementation libs.lifecycle.livedata
+    implementation libs.lifecycle.runtime
+    
+    // Dependency Injection
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+    
+    // Coroutines
+    implementation libs.coroutines.core
+    implementation libs.coroutines.android
+    
+    // Modern Android Features
+    implementation libs.splashscreen
+    implementation libs.window
+    
+    // Room Database
+    implementation libs.androidx.room.runtime
+    implementation libs.androidx.room.ktx
+    kapt libs.androidx.room.compiler
+    
+    // UI Components
+    implementation libs.shimmer
+    
+    // Legacy Support (for existing code)
     implementation libs.androidx.legacy.support.v4
     implementation 'androidx.viewpager:viewpager:1.0.0'
+    
+    // Logging & Debugging
+    implementation libs.timber
+    debugImplementation libs.leakcanary
+    
+    // Testing
+    testImplementation libs.junit
+    androidTestImplementation libs.androidx.junit
+    androidTestImplementation libs.androidx.espresso.core
 }

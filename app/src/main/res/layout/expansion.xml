@@ -20,6 +20,19 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    
+    <!-- Arkham Horror Logo at the top -->
+    <ImageView
+        android:id="@+id/arkham_horror_logo"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/arkham_horror"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/arkham_horror_logo" />
+    
     <ListView 
 	android:id="@+id/ListView01" 
 	android:layout_width="wrap_content" 

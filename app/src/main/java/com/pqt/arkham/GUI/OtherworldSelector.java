@@ -73,7 +73,7 @@ public class OtherworldSelector extends Activity {
 		final OtherworldSelector myself = this;
  
         // create the adapter using the cursor pointing to the desired data as well as the layout information
-        SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.location_button, cursor, columns, to);
+        SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.location_button, cursor, columns, to, 0);
 
         mAdapter.setViewBinder(new SimpleCursorAdapter.ViewBinder() {
             public boolean setViewValue(View view, final Cursor cursor, int columnIndex) {
@@ -93,7 +93,7 @@ public class OtherworldSelector extends Activity {
             			but.setVisibility(View.VISIBLE);
             		}
 
-            		but.setBackgroundResource(R.drawable.otherworld_loc_btn);
+            		but.setBackgroundResource(R.drawable.otherworld_loc_btn_transparent);
             		view.post(new Runnable() { 
 			    	    //  @Override 
 			    	      public void run() { 
@@ -111,7 +111,7 @@ public class OtherworldSelector extends Activity {
 			            			}
 			            			else
 			            			{
-			            				bmp = BitmapFactory.decodeResource(myself.getResources(), R.drawable.otherworld_loc_btn);
+			            							            			bmp = BitmapFactory.decodeResource(myself.getResources(), R.drawable.otherworld_loc_btn);
 			            				bmpCache.append(-1, bmp);
 			            			}
 			            			bmp = myself.overlayBtn(bmp, otherWorld, but);
@@ -407,7 +407,7 @@ public class OtherworldSelector extends Activity {
     	float heightDeform = but.getHeight();
     	widthDeform = widthDeform/bmp1.getWidth();
     	heightDeform = heightDeform/bmp1.getHeight();
-    	Bitmap bmOverlay = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), Bitmap.Config.RGB_565);
+    	Bitmap bmOverlay = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bmOverlay);
     	canvas.drawBitmap(bmp1, 0,0, null);
     	Matrix mtx;
@@ -477,15 +477,13 @@ public class OtherworldSelector extends Activity {
     
 			protected int getIndependentWidth(int origWidth)
 		{
-			DisplayMetrics dm = new DisplayMetrics();
-			getDisplay().getRealMetrics(dm); 
+			DisplayMetrics dm = getResources().getDisplayMetrics();
 			return (int) Math.ceil((origWidth*dm.widthPixels)/480.0f);
 		}
 		
 		protected int getIndependentHeight(int origHeight)
 		{
-			DisplayMetrics dm = new DisplayMetrics();
-			getDisplay().getRealMetrics(dm); 	
+			DisplayMetrics dm = getResources().getDisplayMetrics();
 			return (int) Math.ceil((origHeight*dm.heightPixels)/800.0f);
 		}
 }

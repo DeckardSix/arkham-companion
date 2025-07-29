@@ -41,7 +41,7 @@
     	    android:id="@+id/open_encounterhx" 
 		  	android:layout_height="100dp"
 		    android:layout_width="100dp"
-		    android:text="Hx"
+		    android:background="@drawable/history_back"
 		    android:layout_alignParentRight="true"
 			android:onClick="openEncHx"/>
     </RelativeLayout>

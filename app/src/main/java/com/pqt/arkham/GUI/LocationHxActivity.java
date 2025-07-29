@@ -46,12 +46,15 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class LocationHxActivity extends Activity {
 	//private Encounter encounter;
@@ -80,6 +83,9 @@ public class LocationHxActivity extends Activity {
         {
         	noHx = true;
         	setContentView(R.layout.empty_hx);
+        	
+        	// Add atmospheric effects for the time-themed Hx screen
+        	addAtmosphericEffects();
         }
 
 //	    gallery.setOnItemClickListener(new OnItemClickListener() {
@@ -88,6 +94,36 @@ public class LocationHxActivity extends Activity {
 //	        }
 //	    });
         
+    }
+    
+    /**
+     * Adds atmospheric effects to the Cthulhu-themed Hx screen
+     */
+    private void addAtmosphericEffects() {
+        // Find the Cthulhu image view
+        android.widget.ImageView timeImage = findViewById(R.id.timeImage);
+        if (timeImage != null) {
+            // Add a subtle rotation animation to simulate ancient horrors stirring
+            android.view.animation.Animation rotation = new android.view.animation.RotateAnimation(
+                0, 360,
+                android.view.animation.Animation.RELATIVE_TO_SELF, 0.5f,
+                android.view.animation.Animation.RELATIVE_TO_SELF, 0.5f
+            );
+            rotation.setDuration(30000); // 30 seconds for a full rotation
+            rotation.setRepeatCount(android.view.animation.Animation.INFINITE);
+            rotation.setInterpolator(new android.view.animation.LinearInterpolator());
+            timeImage.startAnimation(rotation);
+            
+            // Add a subtle fade effect to the atmospheric text
+            android.widget.TextView atmosphericText = findViewById(R.id.atmosphericText);
+            if (atmosphericText != null) {
+                android.view.animation.Animation fade = new android.view.animation.AlphaAnimation(0.6f, 1.0f);
+                fade.setDuration(2000);
+                fade.setRepeatCount(android.view.animation.Animation.INFINITE);
+                fade.setRepeatMode(android.view.animation.Animation.REVERSE);
+                atmosphericText.startAnimation(fade);
+            }
+        }
     }
     
     @Override
@@ -126,6 +162,9 @@ public class LocationHxActivity extends Activity {
     	{
     		noHx = true;
         	setContentView(R.layout.empty_hx);
+        	
+        	// Add atmospheric effects when history becomes empty
+        	addAtmosphericEffects();
     	}
     }
 
@@ -157,7 +196,7 @@ public class LocationHxActivity extends Activity {
 	    }
 	    
 	    @Override
-	    public Object instantiateItem( View pager, int position )
+	    public Object instantiateItem( ViewGroup container, int position )
 	    {
 	    	final ICard theCard = GameState.getInstance().getEncounterHx().get(position).getCard();
 	    	final ArrayList<Encounter> encounters = theCard.getEncounters();
@@ -202,7 +241,7 @@ public class LocationHxActivity extends Activity {
 	    	}
 	    	
 	    	
-	    	((ViewPager) pager).addView(layout);
+	    	((ViewPager) container).addView(layout);
 	    	
 	        Bitmap front;
 	        try {
@@ -226,9 +265,9 @@ public class LocationHxActivity extends Activity {
 	    }
 	    
 	    @Override
-	    public void destroyItem( View pager, int position, Object view )
+	    public void destroyItem( ViewGroup container, int position, Object object )
 	    {
-	        ((ViewPager)pager).removeView( (View)view );
+	        ((ViewPager)container).removeView( (View)object );
 	    }
 	 
 	    @Override
@@ -297,15 +336,13 @@ public class LocationHxActivity extends Activity {
 		
 		protected int getIndependentWidth(int origWidth)
 		{
-			DisplayMetrics dm = new DisplayMetrics();
-			getDisplay().getRealMetrics(dm); 
+			DisplayMetrics dm = getResources().getDisplayMetrics();
 			return (int) Math.ceil((origWidth*dm.widthPixels)/480.0f);
 		}
 		
 		protected int getIndependentHeight(int origHeight)
 		{
-			DisplayMetrics dm = new DisplayMetrics();
-			getDisplay().getRealMetrics(dm); 	
+			DisplayMetrics dm = getResources().getDisplayMetrics();
 			return (int) Math.ceil((origHeight*dm.heightPixels)/800.0f);
 		}
 	}
