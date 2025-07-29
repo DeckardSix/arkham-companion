@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace = "com.pqt.arkham"
+
+    compileSdk = 34
+    buildToolsVersion "34.0.0"
+
+    defaultConfig {
+        applicationId "com.pqt.arkham"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+
+    kotlinOptions {
+        jvmTarget = '21'
+    }
+
+    tasks.withType(JavaCompile) {
+        options.compilerArgs << "-Xlint:deprecation"
+    }
+}
+
+dependencies {
+    implementation libs.androidx.legacy.support.v4
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+}
