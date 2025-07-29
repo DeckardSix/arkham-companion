@@ -23,7 +23,7 @@ import com.pqt.arkham.Expansion;
 import com.pqt.arkham.ExpansionCursor;
 import com.pqt.arkham.GameState;
 import com.pqt.arkham.R;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -43,7 +43,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 
-public class ExpansionSelector extends Activity {
+public class ExpansionSelector extends AppCompatActivity {
 	private ListView lv1;
     /** Called when the activity is first created. */
     @Override

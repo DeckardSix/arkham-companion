@@ -25,7 +25,7 @@ import com.pqt.arkham.ICard;
 import com.pqt.arkham.Encounter;
 import com.pqt.arkham.GameState;
 import com.pqt.arkham.R;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -56,7 +56,7 @@ import android.widget.LinearLayout.LayoutParams;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-public class LocationHxActivity extends Activity {
+public class LocationHxActivity extends AppCompatActivity {
 	//private Encounter encounter;
 	
 	EncounterHxAdapter encAdapter;

@@ -25,7 +25,7 @@ import com.pqt.arkham.GameState;
 import com.pqt.arkham.ICard;
 import com.pqt.arkham.OtherWorldCard;
 import com.pqt.arkham.R;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -53,10 +53,11 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
+import androidx.activity.OnBackPressedCallback;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-public class OtherWorldDeckActivity extends Activity {
+public class OtherWorldDeckActivity extends AppCompatActivity {
 	//private Encounter encounter;
 	
     /** Called when the activity is first created. */
@@ -76,16 +77,14 @@ public class OtherWorldDeckActivity extends Activity {
 
         //viewpager.setBackgroundColor(Color.CYAN);
         
-        // Back press handling for older Activity class
-        // Note: onBackPressed() is deprecated but still functional for older Activity classes
-    }
-    
-    @Override
-    public void onBackPressed() {
-        // Note: onBackPressed() is deprecated but still functional for older Activity classes
-        // For modern apps, consider migrating to AppCompatActivity and using OnBackPressedCallback
-        Toast.makeText(OtherWorldDeckActivity.this, R.string.location_deck_back, Toast.LENGTH_SHORT).show();
-        super.onBackPressed();
+        // Modern back press handling using OnBackPressedCallback
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Toast.makeText(OtherWorldDeckActivity.this, R.string.location_deck_back, Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
     
     @Override

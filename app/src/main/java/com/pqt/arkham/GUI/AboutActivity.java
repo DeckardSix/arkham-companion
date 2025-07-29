@@ -17,12 +17,12 @@
 package com.pqt.arkham.GUI;
 
 import com.pqt.arkham.R;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.TextView;
 
-public class AboutActivity extends Activity {
+public class AboutActivity extends AppCompatActivity {
 
 	/** Called when the activity is first created. */
     @Override

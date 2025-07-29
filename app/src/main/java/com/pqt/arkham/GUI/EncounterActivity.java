@@ -18,11 +18,11 @@ package com.pqt.arkham.GUI;
 
 import com.pqt.arkham.AHFlyweightFactory;
 import com.pqt.arkham.R;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class EncounterActivity extends Activity {
+public class EncounterActivity extends AppCompatActivity {
 	private TextView tv1;
 	//private Encounter encounter;
 	

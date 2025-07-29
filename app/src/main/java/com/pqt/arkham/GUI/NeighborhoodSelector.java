@@ -23,7 +23,7 @@ import com.pqt.arkham.GameState;
 import com.pqt.arkham.Neighborhood;
 import com.pqt.arkham.NeighborhoodCursor;
 import com.pqt.arkham.R;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -38,7 +38,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-public class NeighborhoodSelector extends Activity {
+public class NeighborhoodSelector extends AppCompatActivity {
 	private ListView lv1;
     /** Called when the activity is first created. */
     @Override
@@ -77,7 +77,7 @@ public class NeighborhoodSelector extends Activity {
         // the XML defined views which the data will be bound to
         int[] to = new int[] { R.id.name_entry, R.id.name_entry2 };
  
-        final Activity act = this;
+        final AppCompatActivity act = this;
         final Bundle bundle = new Bundle();
         // create the adapter using the cursor pointing to the desired data as well as the layout information
         SimpleCursorAdapter mAdapter = new SimpleCursorAdapter(this, R.layout.neighborhood_button, cursor, columns, to, 0);

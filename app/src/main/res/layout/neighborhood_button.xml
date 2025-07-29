@@ -35,8 +35,11 @@
    	android:layout_marginBottom="2dp"
    	android:layout_marginTop="2dp"
    	android:baselineAligned="false"
-   	android:textSize="@dimen/neighborhood_button"
-   	android:layout_weight="0.5" />
+   	android:layout_weight="0.5"
+   	android:autoSizeTextType="uniform"
+   	android:autoSizeMinTextSize="8sp"
+   	android:autoSizeMaxTextSize="24sp"
+   	android:autoSizeStepGranularity="1sp" />
   <Button 
    	android:text="Button" 
    	android:id="@+id/name_entry2" 
@@ -52,6 +55,9 @@
    	android:layout_marginBottom="2dp"
    	android:layout_marginTop="2dp"
    	android:baselineAligned="false"
-   	android:textSize="@dimen/neighborhood_button"
-   	android:layout_weight="0.5" />
+   	android:layout_weight="0.5"
+   	android:autoSizeTextType="uniform"
+   	android:autoSizeMinTextSize="8sp"
+   	android:autoSizeMaxTextSize="24sp"
+   	android:autoSizeStepGranularity="1sp" />
 </LinearLayout>

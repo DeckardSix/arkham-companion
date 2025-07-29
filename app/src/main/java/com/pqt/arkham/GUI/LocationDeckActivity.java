@@ -24,7 +24,7 @@ import com.pqt.arkham.Encounter;
 import com.pqt.arkham.GameState;
 import com.pqt.arkham.NeighborhoodCard;
 import com.pqt.arkham.R;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -54,10 +54,11 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.Toast;
+import androidx.activity.OnBackPressedCallback;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-public class LocationDeckActivity extends Activity {
+public class LocationDeckActivity extends AppCompatActivity {
 	//private Encounter encounter;
 	
 	private long neiID;

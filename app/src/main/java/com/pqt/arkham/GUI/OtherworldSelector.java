@@ -23,7 +23,7 @@ import com.pqt.arkham.GameState;
 import com.pqt.arkham.LocationCursor;
 import com.pqt.arkham.OtherWorldColor;
 import com.pqt.arkham.R;
-import android.app.Activity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -46,7 +46,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.CheckBox;
 
-public class OtherworldSelector extends Activity {
+public class OtherworldSelector extends AppCompatActivity {
 	private ListView lv1;
 	//private ListView lv2;
     /** Called when the activity is first created. */
