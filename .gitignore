@@ -1,6 +1,4 @@
 /.gradle/
 /build/
 /app/build/
-/app/release/Arkham_Horror_Companion.aab
-/app/release/Arkham_Horror_Companion-v1.0.1-release.aab
-/app/release/Arkham_Horror_Companion-v1.0.2-release.aab
+/app/release/
